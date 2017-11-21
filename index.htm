@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Train Tracker</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Germania+One|Lobster" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+    
+
+    <!-- Moment.js Reference -->
+    <!-- <script src="http://momentjs.com/downloads/moment.js"></script>   -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    
+
+  </head>
+
+  <body style="background-color: black; background: url(https://orig00.deviantart.net/096f/f/2016/040/3/2/train_desktop_windows_10_steampunk_to_the_max__by_yereverluvinuncleber-d9r6ckh.jpg) 
+  no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;">
+
+    <!-- Employee Tracker -->
+    <div class="container">
+
+      <!-- Jumbotron -->
+      <div class="jumbotron" style="background: url(http://saimg-a.akamaihd.net/saatchi/275350/art/1406700/673563-7.jpg); color: #ecac08; text-shadow: 5px 5px 7px #000000; font-style: bold; font-family: 'Germania One', cursive;font-family: 'Lobster', cursive; box-shadow: 0 0 5px 5px #a8a5a5; margin-top: 10px">
+        <h1 class="text-center">Train Travel Times</h1>
+        <h3 class="text-center">Scheduled arrivals listed below</h3>
+      </div>
+
+      <div class="row">
+
+        <div class="col-lg-12">
+
+        <!-- Current Employees-->
+          <div class="panel panel-primary" style="font-family: 'Germania One', cursive;font-family: 'Lobster', cursive">
+            <div class="panel-heading" style="background-color: #ecac08; color:black; box-shadow: 0 0 5px 5px #a8a5a5;">
+              <h3 class="panel-title"><strong>Current Train Schedule</strong></h3>
+            </div>
+            <div class="panel-body" >
+              <table class="table table-hover" id="trainTable">
+
+                <thead >
+                  <tr>
+                    <th>Train Name</th>
+                    <th>Destination</th>
+                    <th>Frequency (minutes)</th>
+                    <th>Next Arrival</th>
+                    <th>Minutes Away</th>
+              
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Add Employee  -->
+          <div class="panel panel-primary" style="font-family: 'Germania One', cursive;font-family: 'Lobster', cursive">
+            <div class="panel-heading" style="background-color: #ecac08; color:black; box-shadow: 0 0 5px 5px #a8a5a5;">
+              <h3 class="panel-title"><strong>Add Train</strong></h3>
+            </div>
+            <div class="panel-body">
+
+              <!-- Entry Form -->
+              <form>
+                <div class="form-group">
+                  <label for="trainInput">Train Name</label>
+                  <input class="form-control" id="trainInput" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="destinationInput">Destination</label>
+                  <input class="form-control" id="destinationInput" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="firstTrainInput">First Train Time (HH:mm Military Time)</label>
+                  <input class="form-control" id="firstTrainInput" type="time">
+                </div>
+                <div class="form-group">
+                  <label for="frequencyInput">Frequency</label>
+                  <input class="form-control" id="frequencyInput" type="number">
+                </div>
+                <button class="btn btn-primary" id="addTrainBtn" type="submit" style="background-color: #ecac08; color:black;"><strong>Submit</strong></button>
+              </form>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="app.js"></script>
+
+  </body>
+
+</html>
